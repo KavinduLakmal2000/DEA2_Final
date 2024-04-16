@@ -1,0 +1,41 @@
+body {
+    background-image: url("../images/bg1.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    margin-top: 5vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.logForm{
+    margin-top: 25vh;
+}
+
+
+.SignUP{
+    margin-top: 5vh;
+}
+
+.sign {
+    margin-top: 2%;
+    width: 40%;
+    border-radius: 20px;
+    float: right;
+}
+
+.form-control {
+    border-radius: 20px;
+}
+
+.form-select{
+    border-radius: 20px;
+}

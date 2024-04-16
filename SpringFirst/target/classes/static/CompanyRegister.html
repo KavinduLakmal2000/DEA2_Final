@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="fonts/boxicons.css">
+    <script src="JS/IndustryRegister.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</head>
+<body>
+<form id="loginForm" onsubmit="submitData(event)">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-sm-5">
+                <div class="SignUP">
+                    <div class="card">
+                        <div class="card-header text-center top">INDUSTRY SIGN UP</div>
+
+                        <div class="card-body">
+
+                            <div class="row mb-3">
+
+                                <div class="col">
+
+                                    <label class="form-label">Contact Person First Name :</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class='bx bx-user'></i></span>
+                                        <input type="text" class="form-control" id="cpFname" placeholder="First Name">
+                                    </div>
+                                </div>
+
+                                <div class="col">
+
+                                    <label class="form-label">Contact Person Last Name :</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class='bx bx-user'></i></span>
+                                        <input type="text" class="form-control" id="cpLname" placeholder="Last Name">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="mb-3">
+                                <label class="form-label">Company Email :</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class='bx bx-envelope'></i></span>
+                                    <input type="text" class="form-control" id="mail" placeholder="exampleUser@gmail.com">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Company Name :</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class='bx bx-envelope'></i></span>
+                                    <input type="text" class="form-control" id="Cname" placeholder="LSEG Technology">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+
+                                <div class="col">
+
+                                    <label class="form-label">User Name:</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class='bx bx-user-plus'></i></span>
+                                        <input type="text" class="form-control" id="username" placeholder="exampleUser">
+                                    </div>
+                                </div>
+
+                                <div class="col">
+
+                                    <label class="form-label">ID :</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class='bx bxs-user-plus'></i></span>
+                                        <input type="text" class="form-control" id="uid" placeholder="1xxx">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="mb-3">
+                                <label class="form-label">Annual Revenue :</label>
+                                <div class="input-group">
+                                 <span class="input-group-text">
+                                    <i class="bx bx-box"></i>
+                                </span>
+                                    <select class="form-select form-control" id="annual">
+                                        <option value="1000">$1000</option>
+                                        <option value="2000">$2000</option>
+                                        <option value="3000">$3000</option>
+                                        <option value="4000">$4000</option>
+                                        <option value="5000">$5000</option>
+                                        <option value="6000">$6000</option>
+                                        <option value="7000">$7000</option>
+                                        <option value="8000">$8000</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+
+                            <div class="row mb-3">
+
+                                <div class="col">
+
+                                    <label class="form-label">Password :</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class='bx bxs-key'></i></span>
+                                        <input type="password" class="form-control" id="pass1" placeholder="New Password">
+                                    </div>
+                                </div>
+
+                                <div class="col">
+
+                                    <label class="form-label">Confirm Password :</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class='bx bxs-key'></i></span>
+                                        <input type="password" class="form-control" id="pass2" placeholder="Confirm Password">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Mobile No :</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class='bx bx-mobile'></i></span>
+                                    <input type="text" class="form-control" id="phone" placeholder="+94 1234 1234">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Industry :</label>
+                                <div class="input-group">
+                                 <span class="input-group-text">
+                                    <i class="bx bx-box"></i>
+                                </span>
+                                    <select class="form-select form-control" id="industry">
+                                        <option value="Software Development">Software Development</option>
+                                        <option value="Data Science and Analytics">Data Science and Analytics</option>
+                                        <option value="Cyber security">Cyber security</option>
+                                        <option value="Cloud Computing">Cloud Computing</option>
+                                        <option value="Artificial Intelligence">Artificial Intelligence</option>
+                                        <option value="Internet of Things (IoT)">Internet of Things (IoT)</option>
+                                        <option value="Game Development">Game Development</option>
+                                        <option value="Augmented Reality (AR) and Virtual Reality (VR)">Augmented Reality (AR) and Virtual Reality (VR)</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <button type="submit" class="btn btn-primary sign">SIGN UP</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+</body>
+</html>

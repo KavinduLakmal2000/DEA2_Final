@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/Profile.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="JS/industryProfile.js"></script>
+    <link rel="stylesheet" href="fonts/boxicons.css">
+
+</head>
+<body class="bg-light d-flex justify-content-center align-items-center vh-100">
+
+<div class="card p-4 w-75">
+    <h1 class="text-center mb-4">My Profile</h1>
+    <form id="companyForm">
+
+        <div class="mb-3">
+            <label for="comID" class="form-label">Company ID:</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class='bx bxs-key'></i></span>
+                <input type="text" id="comID" class="form-control" placeholder="Company ID">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="companyName" class="form-label">Company Name:</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class='bx bx-building'></i></span>
+                <input type="text" id="companyName" class="form-control" placeholder="Company Name">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="annualRevenue" class="form-label">Annual Revenue:</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class='bx bx-dollar'></i></span>
+                <input type="text" id="annualRevenue" class="form-control" placeholder="Annual Revenue">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="industry" class="form-label">Industry:</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class='bx bx-spreadsheet'></i></span>
+                <input type="text" id="industry" class="form-control" placeholder="Industry">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="CPFname" class="form-label">Contact Person First Name:</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class='bx bx-user'></i></span>
+                <input type="text" id="CPFname" class="form-control" placeholder="Contact Person First Name">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="CPLname" class="form-label">Contact Person Last Name:</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class='bx bx-user'></i></span>
+                <input type="text" id="CPLname" class="form-control" placeholder="Contact Person Last Name">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class='bx bx-envelope'></i></span>
+                <input type="email" id="email" class="form-control" placeholder="Email">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Contact Number:</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class='bx bx-phone'></i></span>
+                <input type="text" id="phone" class="form-control" placeholder="Contact Number">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="password1" class="form-label">Password:</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class='bx bx-lock'></i></span>
+                <input type="text" id="password1" class="form-control" placeholder="Password">
+            </div>
+        </div>
+    </form>
+    <div class="text-center mt-4">
+        <button class="btn btn-primary me-3" onclick="updateProfile()">UPDATE</button>
+        <button class="btn btn-danger me-3" onclick="deleteProfile()">DELETE</button>
+        <button class="btn btn-success" onclick="continueToDashboard()">CONTINUE</button>
+    </div>
+</div>
+
+</body>
+</html>
