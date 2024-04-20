@@ -23,7 +23,7 @@ public class LoginController {
 
 // get all seekers
 
-    @GetMapping("/userReads")
+    @GetMapping("/AllUserReads")
     public ResponseEntity<List<User>> getAllUserReads() {
         List<User> userReads = userService.getAllUserReads();
         return ResponseEntity.ok().body(userReads);
@@ -178,6 +178,15 @@ public class LoginController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+
+    // check all details in Company
+
+    @GetMapping("/AllCompanyReads")
+    public ResponseEntity<List<company>> getAllCompanyReads() {
+        List<company> companyReads = companyService.getAllCompanyReads();
+        return ResponseEntity.ok().body(companyReads);
     }
 
 

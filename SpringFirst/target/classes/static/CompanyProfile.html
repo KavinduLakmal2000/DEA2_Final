@@ -13,71 +13,80 @@
 </head>
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">
 
-<div class="card p-4 w-75">
+<<div class="card p-4 w-75">
     <h1 class="text-center mb-4">My Profile</h1>
     <form id="companyForm">
-
-        <div class="mb-3">
-            <label for="comID" class="form-label">Company ID:</label>
-            <div class="input-group">
-                <span class="input-group-text"><i class='bx bxs-key'></i></span>
-                <input type="text" id="comID" class="form-control" placeholder="Company ID">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="comID" class="form-label">Company ID:</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class='bx bxs-key'></i></span>
+                    <input type="text" id="comID" readonly class="form-control" placeholder="Company ID">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="companyName" class="form-label">Company Name:</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class='bx bx-building'></i></span>
+                    <input type="text" id="companyName" class="form-control" placeholder="Company Name">
+                </div>
             </div>
         </div>
-        <div class="mb-3">
-            <label for="companyName" class="form-label">Company Name:</label>
-            <div class="input-group">
-                <span class="input-group-text"><i class='bx bx-building'></i></span>
-                <input type="text" id="companyName" class="form-control" placeholder="Company Name">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="annualRevenue" class="form-label">Annual Revenue:</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class='bx bx-dollar'></i></span>
+                    <input type="text" id="annualRevenue" class="form-control" placeholder="Annual Revenue">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="industry" class="form-label">Industry:</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class='bx bx-spreadsheet'></i></span>
+                    <input type="text" id="industry" class="form-control" placeholder="Industry">
+                </div>
             </div>
         </div>
-        <div class="mb-3">
-            <label for="annualRevenue" class="form-label">Annual Revenue:</label>
-            <div class="input-group">
-                <span class="input-group-text"><i class='bx bx-dollar'></i></span>
-                <input type="text" id="annualRevenue" class="form-control" placeholder="Annual Revenue">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="CPFname" class="form-label">Contact Person First Name:</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class='bx bx-user'></i></span>
+                    <input type="text" id="CPFname" class="form-control" placeholder="Contact Person First Name">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="CPLname" class="form-label">Contact Person Last Name:</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class='bx bx-user'></i></span>
+                    <input type="text" id="CPLname" class="form-control" placeholder="Contact Person Last Name">
+                </div>
             </div>
         </div>
-        <div class="mb-3">
-            <label for="industry" class="form-label">Industry:</label>
-            <div class="input-group">
-                <span class="input-group-text"><i class='bx bx-spreadsheet'></i></span>
-                <input type="text" id="industry" class="form-control" placeholder="Industry">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email:</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class='bx bx-envelope'></i></span>
+                    <input type="email" id="email" class="form-control" placeholder="Email">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="phone" class="form-label">Contact Number:</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class='bx bx-phone'></i></span>
+                    <input type="text" id="phone" class="form-control" placeholder="Contact Number">
+                </div>
             </div>
         </div>
-        <div class="mb-3">
-            <label for="CPFname" class="form-label">Contact Person First Name:</label>
-            <div class="input-group">
-                <span class="input-group-text"><i class='bx bx-user'></i></span>
-                <input type="text" id="CPFname" class="form-control" placeholder="Contact Person First Name">
-            </div>
-        </div>
-        <div class="mb-3">
-            <label for="CPLname" class="form-label">Contact Person Last Name:</label>
-            <div class="input-group">
-                <span class="input-group-text"><i class='bx bx-user'></i></span>
-                <input type="text" id="CPLname" class="form-control" placeholder="Contact Person Last Name">
-            </div>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <div class="input-group">
-                <span class="input-group-text"><i class='bx bx-envelope'></i></span>
-                <input type="email" id="email" class="form-control" placeholder="Email">
-            </div>
-        </div>
-        <div class="mb-3">
-            <label for="phone" class="form-label">Contact Number:</label>
-            <div class="input-group">
-                <span class="input-group-text"><i class='bx bx-phone'></i></span>
-                <input type="text" id="phone" class="form-control" placeholder="Contact Number">
-            </div>
-        </div>
-        <div class="mb-3">
-            <label for="password1" class="form-label">Password:</label>
-            <div class="input-group">
-                <span class="input-group-text"><i class='bx bx-lock'></i></span>
-                <input type="text" id="password1" class="form-control" placeholder="Password">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="password1" class="form-label">Password:</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class='bx bx-lock'></i></span>
+                    <input type="text" id="password1" class="form-control" placeholder="Password">
+                </div>
             </div>
         </div>
     </form>
@@ -87,6 +96,7 @@
         <button class="btn btn-success" onclick="continueToDashboard()">CONTINUE</button>
     </div>
 </div>
+
 
 </body>
 </html>

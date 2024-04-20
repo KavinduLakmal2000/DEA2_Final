@@ -3,6 +3,8 @@ package com.example.springfirst.Service;
 import com.example.springfirst.Model.User;
 import com.example.springfirst.Model.company;
 import com.example.springfirst.repository.CompanyRepository;
+
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,11 @@ public class companyService {
     // save data in company
     public company save(company company) {
         return companyRepository.save(company);
+    }
+
+    // check all details in db
+    public List<company> getAllCompanyReads() {
+        return companyRepository.findAll();
     }
 
     //login as company

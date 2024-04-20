@@ -9,6 +9,10 @@ function submitData(event) {
         "password": password
     };
 
+    if (id==="admin" || password==="admin"){
+        window.location.href = "Admin.html";
+    }
+
     if (id.startsWith("2")) {
         fetch('http://localhost:8091/login/seeker', {
             method: 'POST',
