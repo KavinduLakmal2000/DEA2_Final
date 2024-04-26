@@ -9,7 +9,7 @@ management:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:6060/test #mekata DB name ek dnn
+    url: jdbc:mysql://localhost:6060/test
     username: user
     password: 21871
     driver-class-name: com.mysql.cj.jdbc.Driver

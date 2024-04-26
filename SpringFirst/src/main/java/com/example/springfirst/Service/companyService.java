@@ -21,10 +21,6 @@ public class companyService {
         return companyRepository.save(company);
     }
 
-    // check all details in db
-    public List<company> getAllCompanyReads() {
-        return companyRepository.findAll();
-    }
 
     //login as company
     public boolean authenticate(Long id, String password) {

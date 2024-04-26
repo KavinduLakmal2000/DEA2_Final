@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('http://localhost:8091/AllUserReads')
+    fetch('http://localhost:8091/templates/hires/AllSeekers')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -43,7 +43,7 @@ function deleteUser(id) {
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:8091/delete/users/${id}`, {
+            fetch(`http://localhost:8091/templates/hires/Seeker/${id}`, {
                 method: 'DELETE'
             })
                 .then(response => {
@@ -77,7 +77,7 @@ function deleteUser(id) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('http://localhost:8091/AllCompanyReads')
+    fetch('http://localhost:8091/templates/hires/AllCompanies')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -123,7 +123,7 @@ function deleteCompany(id) {
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:8091/delete/company/${id}`, {
+            fetch(`http://localhost:8091/templates/hires/Company/${id}`, {
                 method: 'DELETE'
             })
                 .then(response => {
@@ -150,4 +150,16 @@ function deleteCompany(id) {
                 });
         }
     });
+}
+
+function logout(){
+    window.location.href = "http://localhost:8091/Welcome.html";
+}
+
+function home(){
+    window.location.href = "http://localhost:8091/Admin.html";
+}
+
+function posts(){
+    window.location.href = "http://localhost:8091/templates/hires/AdminControl";
 }

@@ -1,0 +1,28 @@
+body{
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+
+}
+
+.card {
+    margin-top: 5vh;
+    background-color: rgba(66, 65, 65, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+
+.form-control {
+    border-radius: 20px;
+}
+
+.form-select{
+    border-radius: 20px;
+}

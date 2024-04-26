@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const id = urlParams.get('id');
+    const uid = urlParams.get('id');
     const form = document.getElementById("companyForm");
 
-    fetch(`http://localhost:8091/companyRead/${id}`)
+    fetch(`http://localhost:8091/companyRead/${uid}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -117,5 +117,7 @@ function deleteProfile() {
 }
 
 function continueToDashboard() {
-    window.location.href = "Welcome.html";
+    const id = document.getElementById("comID").value;
+    const redirectUrl = "http://localhost:8091/templates/hires/JobsByCom?comId=" + id;
+    window.location.href = redirectUrl;
 }

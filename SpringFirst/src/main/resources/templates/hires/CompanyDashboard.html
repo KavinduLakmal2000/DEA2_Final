@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Published Ads</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/styles/DashStyles.css">
+
+
+</head>
+<body style="background-image: url('/images/bg5.jpg');">
+
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" onclick="DashBoard()">Opportunity Hub</a>
+        <span class="navbar-text navbar-brand">|</span>
+
+        <div class="d-flex">
+            <a class="nav-link me-3" href="#" onclick="NewAd()"><i class='bx bx-plus' style='color:#ffffff' ></i>  New Ad</a>
+        </div>
+
+        <div class="d-flex">
+            <a class="nav-link me-3" href="#" onclick="myProfile()"><i class='bx bxs-user'></i>  My Profile</a>
+        </div>
+
+        <div class="ms-auto">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                <a href="#" class="btn btn-outline-danger ms-3" type="submit" onclick="logout()"> LOGOUT</a>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <h1 class="text-center my-4">PUBLISHED ADS</h1>
+    <a class="btn btn-primary" onclick="NewAd()"><i class='bx bx-plus'></i>  Post Your Ads</a>
+
+    <br>
+
+    <div class="row mb-3">
+        <div class="col-sm-8">
+            <label id="idLabel" class="form-label"></label>
+        </div>
+    </div>
+
+
+    <table class="table table-dark table-hover">
+        <thead>
+        <tr>
+            <th>Ad ID</th>
+            <th>My ID</th>
+            <th>Position</th>
+            <th>Job Type</th>
+            <th>Email</th>
+            <th>Company Description</th>
+            <th>Requirements</th>
+            <th>Expire Date</th>
+            <th>Image</th>
+            <th>Created At</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="hire : ${hires}">
+            <td th:text="${hire.id}"></td>
+            <td th:text="${hire.comId}"></td>
+            <td th:text="${hire.position}"></td>
+            <td th:text="${hire.jobType}"></td>
+            <td th:text="${hire.email}"></td>
+            <td th:text="${hire.description}"></td>
+            <td th:text="${hire.requirements}"></td>
+            <td th:text="${hire.expireDate}"></td>
+            <td>
+                <img th:src="@{'/images/'+ ${hire.imageFileName}}" alt="..." width="100">
+            </td>
+            <td th:text="${hire.createdAt.toString().substring(0,10)}"></td>
+            <td style="white-space: nowrap">
+                <a class="btn btn-primary btn-sm"th:href="@{edit(id=${hire.id}, comId=${hire.comId})}"><i class='bx bxs-edit'></i>  Edit</a>
+                <a class="btn btn-danger btn-sm" th:href="@{delete(id=${hire.id})}" onclick="return confirm('Are you sure?')"><i class='bx bxs-trash' style='color:#ffffff' ></i>  Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="/JS/DashScript1.js"></script>
+</body>
+</html>

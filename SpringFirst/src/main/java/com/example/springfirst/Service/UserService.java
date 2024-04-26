@@ -28,11 +28,6 @@ public class UserService {
         return optionalUser.isPresent() && optionalUser.get().getPassword().equals(password);
     }
 
-    // check all seekers in db
-    public List<User> getAllUserReads() {
-        return userRepository.findAll();
-    }
-
 
     // check seeker by id
     public Optional<User> getUserReadById(Long id) {

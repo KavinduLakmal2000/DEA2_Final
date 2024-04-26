@@ -21,13 +21,6 @@ public class LoginController {
     @Autowired
     private companyService companyService;
 
-// get all seekers
-
-    @GetMapping("/AllUserReads")
-    public ResponseEntity<List<User>> getAllUserReads() {
-        List<User> userReads = userService.getAllUserReads();
-        return ResponseEntity.ok().body(userReads);
-    }
 
     // get seeker by id
 
@@ -178,15 +171,6 @@ public class LoginController {
         } else {
             return ResponseEntity.notFound().build();
         }
-    }
-
-
-    // check all details in Company
-
-    @GetMapping("/AllCompanyReads")
-    public ResponseEntity<List<company>> getAllCompanyReads() {
-        List<company> companyReads = companyService.getAllCompanyReads();
-        return ResponseEntity.ok().body(companyReads);
     }
 
 

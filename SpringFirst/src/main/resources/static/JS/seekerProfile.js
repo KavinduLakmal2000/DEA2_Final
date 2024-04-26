@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const id = urlParams.get('id');
     const form = document.getElementById("companyForm");
 
+
     fetch(`http://localhost:8091/userRead/${id}`)
         .then(response => {
             if (!response.ok) {
@@ -32,6 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 });
+
+function continueToDashboard() {
+    const id = document.getElementById("UID").value;
+    window.location.href = "http://localhost:8091/templates/hires?id="+id;
+}
 
 function updateProfile() {
     const id = document.getElementById("UID").value;
@@ -118,6 +124,3 @@ function deleteProfile() {
         });
 }
 
-function continueToDashboard() {
-    window.location.href = "Welcome.html";
-}

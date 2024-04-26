@@ -48,16 +48,23 @@ function submitData(event) {
                 return response.text();
             })
             .then(message => {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success',
-                    text: message
-                }).then(() => {
-                    if (message === "Registration successful") {
-                        window.location.href = "Login.html";
-                    }
-                });
+                if (message === "Registration successful") {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: message
+                    })
+                    window.location.href = "Login.html";
+                }
+                else if (message === "ID already registered") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Registration failed',
+                        text: message
+                    });
+                }
             })
+
             .catch(error => {
                 console.error('Error:', error);
                 Swal.fire({

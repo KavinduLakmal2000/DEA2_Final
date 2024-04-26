@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Post Edit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/styles/DashStyles.css">
+
+</head>
+<body style=" background-image: url('/images/bg6.jpg');">
+
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" onclick="DashBoard()">Opportunity Hub</a>
+        <span class="navbar-text navbar-brand">|</span>
+
+        <div class="d-flex">
+            <a class="nav-link me-3" href="#" onclick="myProfile()"><i class='bx bxs-user'></i>  My Profile</a>
+        </div>
+
+        <div class="ms-auto">
+            <button class="btn btn-outline-danger" onclick="logout()" type="submit"><i class='bx bx-log-out'></i> LOGOUT</button>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto rounded border p-4 m-4 card">
+            <h2 class="text-center mb-5">EDIT AD</h2>
+
+            <form method="post" enctype="multipart/form-data" th:object="${hireDto}">
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Company ID</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="idInput" name="id" readonly>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Ad Id</label>
+                    <div class="col-sm-8">
+                        <input readonly class="form-control" th:value="${hire.id}">
+
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Position</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" th:field="${hireDto.position}">
+                        <p th:if="${#fields.hasErrors('position')}" th:errorclass="text-danger"
+                           th:errors="${hireDto.position}"></p>
+                    </div>
+                </div>
+
+
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">JobType</label>
+                    <div class="col-sm-8">
+                        <select class="form-select" th:field="${hireDto.jobType}">
+                            <option value="other">Full Time</option>
+                            <option value="Phone">Part Time</option>
+                            <option value="Computers">Internship</option>
+                            <option value="Accessories">Other</option>
+                        </select>
+
+                        <p th:if="${#fields.hasErrors('JobType')}" th:errorclass="text-danger"
+                           th:errors="${hireDto.jobType}"></p>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-8"> <!-- Expanded to col-sm-10 -->
+                        <input class="form-control" th:field="${hireDto.email}">
+                        <p th:if="${#fields.hasErrors('email')}" th:errorclass="text-danger"
+                           th:errors="${hireDto.email}"></p>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Expire Date</label>
+                    <div class="col-sm-8">
+                        <input type="date" class="form-control" th:field="${hireDto.expireDate}">
+                        <p th:if="${#fields.hasErrors('expireDate')}" th:errorclass="text-danger" th:errors="${hireDto.expireDate}"></p>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Description</label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" rows="4" th:field="${hireDto.description}"></textarea>
+                        <p th:if="${#fields.hasErrors('description')}" th:errorclass="text-danger"
+                           th:errors="${hireDto.description}"></p>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Requirements</label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" rows="4" th:field="${hireDto.requirements}"></textarea>
+                        <p th:if="${#fields.hasErrors('Requirements')}" th:errorclass="text-danger"
+                           th:errors="${hireDto.requirements}"></p>
+                    </div>
+                </div>
+
+
+
+
+                <div class="row mb-3">
+                    <div class="offset-sm-4 col-sm-8">
+                        <img th:src="@{'/images/' + ${hire.imageFileName}}"
+                             alt="..." width="150">
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Upload Description image</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="file" th:field="${hireDto.imageFile}">
+                        <p th:if="${#fields.hasErrors('imageFile')}" th:errorclass="text-danger"
+                           th:errors="${hireDto.imageFile}"></p>
+                    </div>
+                </div>
+
+
+                        <div class="row mb-3">
+                            <label class="col-sm-4 col-form-label">Created At</label>
+                            <div class="col-sm-8">
+                                <input readonly class="form-control"  th:value="${hire.createdAt}">
+
+                            </div>
+                        </div>
+
+                <div class="row">
+                    <div class="offset-sm-4 col-sm-4 d-grid">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <div class="col-sm-4 d-grid">
+                        <a class="btn btn-danger" href="#" onclick="DashBoard()" role="button">Cancel</a>
+                    </div>
+
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="/JS/DashScript1.js"></script>
+</body>
+</html>

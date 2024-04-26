@@ -9,9 +9,7 @@ function submitData(event) {
         "password": password
     };
 
-    if (id==="admin" || password==="admin"){
-        window.location.href = "Admin.html";
-    }
+
 
     if (id.startsWith("2")) {
         fetch('http://localhost:8091/login/seeker', {
@@ -79,11 +77,27 @@ function submitData(event) {
                     text: 'An error occurred while logging in.'
                 });
             });
-    } else {
+    }
+
+    else if (id==="admin" || password==="admin"){
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: ''
+        }).then(() => {
+            window.location.href = "Admin.html";
+            });
+
+    }
+
+    else {
         Swal.fire({
             icon: 'warning',
             title: 'Incorrect ID',
             text: 'Please try again with a valid ID.'
         });
+       // window.location.href = "CompanyProfile.html?id=1002";
+
     }
 }
